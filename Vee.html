@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine's Proposal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ffafbd, #ffc3a0);
+      text-align: center;
+      color: #fff;
+    }
+    h1 {
+      margin-top: 100px;
+      font-size: 3em;
+      animation: fadeIn 3s ease-in-out;
+    }
+    .buttons {
+      margin-top: 50px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    #yes {
+      background: #ff4b5c;
+      color: white;
+    }
+    #no {
+      background: #555;
+      color: white;
+      position: relative;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my Valentine? 💖</h1>
+  <div class="buttons">
+    <button id="yes">Yes!</button>
+    <button id="no">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('no');
+    const yesBtn = document.getElementById('yes');
+
+    // Messages to cycle through when "No" is clicked
+    const messages = [
+      "Please? 🥺",
+      "Are you sure? 😢",
+      "Think again 💕",
+      "Don’t break my heart 💔",
+      "Say yes, pretty please 🌹",
+      "You know you want to 😘"
+    ];
+    let index = 0;
+
+    noBtn.addEventListener('click', () => {
+      noBtn.textContent = messages[index];
+      index = (index + 1) % messages.length;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      alert("Yay Babe! 💍 You said YES!");
+      document.body.innerHTML = "<h1 style='margin-top:100px;font-size:3em;'>Forever Valentine 💖</h1>";
+    });
+  </script>
+</body>
+</html>
